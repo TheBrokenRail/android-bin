@@ -8,10 +8,16 @@ matrix:
       env: ARCH="x86"
     - name: "Android x86-64"
       env: ARCH="x86_64"
+addons:
+  apt:
+    packages:
+      - cmake
+      - libreadline-dev
 script:
   - chmod +x *.sh
   - mkdir out
   - export DEPLOY_DIR=$(pwd)/out
   - source ./get-ndk.sh
   - ./build-jerryscript.sh
+  - ./build-lua.sh
   - ./deploy.sh
