@@ -14,7 +14,7 @@ ${NDK_HOME}/build/tools/make_standalone_toolchain.py \
   --api=21 \
   --install-dir=${NDK_HOME}/generated-toolchains/${ARCH}
 export PATH=${NDK_HOME}/generated-toolchains/${ARCH}/bin:${PATH}
-export TARGET=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_toolchain; print make_standalone_toolchain.get_triple("arm")')
+export TARGET=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_toolchain; print make_standalone_toolchain.get_triple("'"${ARCH}"'")')
 
 echo 'Creationg CMake Toolchain File...'
 echo -e 'set(CMAKE_SYSTEM_NAME Android)\nset(CMAKE_ANDROID_STANDALONE_TOOLCHAIN '"${NDK_HOME}/generated-toolchains/${ARCH}"')' > toolchain.cmake
