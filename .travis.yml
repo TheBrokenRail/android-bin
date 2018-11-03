@@ -13,5 +13,5 @@ script:
   - mkdir out
   - export DEPLOY_DIR=$(pwd)/out
   - source ./get-ndk.sh
-  - build-jerryscript.sh
-  - deploy.sh
+  - ./build-jerryscript.sh
+  - ./deploy.sh
