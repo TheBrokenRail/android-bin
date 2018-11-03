@@ -18,6 +18,8 @@ export TARGET=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_to
 
 echo 'Creationg CMake Toolchain File...'
 echo -e 'set(CMAKE_SYSTEM_NAME Android)\nset(CMAKE_ANDROID_STANDALONE_TOOLCHAIN '"${NDK_HOME}/generated-toolchains/${ARCH}"')' > toolchain.cmake
+TOOLCHAIN_FILE=$(pwd)/toolchain.cmake
 
 echo "NDK_HOME: ${NDK_HOME}"
 echo "TARGET: ${TARGET}"
+echo "TOOLCHAIN_FILE: ${TOOLCHAIN_FILE}"
