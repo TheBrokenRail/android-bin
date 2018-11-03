@@ -9,6 +9,6 @@ curl --retry 5 -L -o bash.tar.gz http://ftp.gnu.org/gnu/bash/bash-${BASH_VER}.ta
 tar zxf bash.tar.gz
 cd bash-${BASH_VER}
 
-./configure --host=${TARGET} --prefix=${OUT_DIR}
+./configure --disable-readline --host=${TARGET} --prefix=${OUT_DIR} CFLAGS="--sysroot=${NDK_HOME}/generated-toolchains/${ARCH}/sysroot"
 make
 make install
