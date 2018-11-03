@@ -15,5 +15,4 @@ script:
   - source ./get-ndk.sh
   - ./build-jerryscript.sh
   - ./build-lua.sh
-  - ./build-lua-jit.sh
   - ./deploy.sh
