@@ -13,7 +13,7 @@ ${NDK_HOME}/build/tools/make_standalone_toolchain.py \
   --arch=${ARCH} \
   --api=21 \
   --install-dir=${NDK_HOME}/generated-toolchains/${ARCH}
-export PATH=${NDK_HOME}/generated-toolchains/${ARCH}/bin:${PATH}
+export PATH=${NDK_HOME}/generated-toolchains/${ARCH}/bin
 export TARGET=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_toolchain; print make_standalone_toolchain.get_triple("arm")')
 
 echo 'Creationg CMake Toolchain File...'
@@ -23,3 +23,4 @@ TOOLCHAIN_FILE=$(pwd)/toolchain.cmake
 echo "NDK_HOME: ${NDK_HOME}"
 echo "TARGET: ${TARGET}"
 echo "TOOLCHAIN_FILE: ${TOOLCHAIN_FILE}"
+echo "PATH: ${PATH}"
