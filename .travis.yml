@@ -13,3 +13,4 @@ script:
   - mkdir out
   - export DEPLOY_DIR=$(pwd)/out
   - source ./get-ndk.sh
+  - deploy.sh
