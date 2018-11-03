@@ -1,0 +1,15 @@
+matrix:
+  include:
+    - name: "Android ARM"
+      env: ARCH="arm"
+    - name: "Android ARM 64"
+      env: ARCH="arm64"
+    - name: "Android x86"
+      env: ARCH="x86"
+    - name: "Android x86-64"
+      env: ARCH="x86-64"
+script:
+  - chmod +x *.sh
+  - mkdir out
+  - export DEPLOY_DIR=$(pwd)/out
+  - source ./get-ndk.sh
