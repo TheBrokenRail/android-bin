@@ -9,4 +9,4 @@ curl --retry 5 -L -o lua-jit.tar.gz http://luajit.org/download/LuaJIT-${LUA_VER}
 tar zxf lua-jit.tar.gz
 cd LuaJIT-${LUA_VER}
 
-make CROSS=${TARGET}- PREFIX=${OUT_DIR}
+make HOST_CC="gcc -m32" CROSS=${TARGET}- PREFIX=${OUT_DIR}
