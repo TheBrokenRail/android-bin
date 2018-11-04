@@ -15,5 +15,5 @@ script:
   - source ./get-ndk.sh
   - ./build-jerryscript.sh
   - ./build-lua.sh
-  - ./build-bash.sh
+  - ./build-dash.sh
   - ./deploy.sh
