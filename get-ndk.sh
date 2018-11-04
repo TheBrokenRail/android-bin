@@ -23,5 +23,5 @@ TOOLCHAIN_FILE=$(pwd)/toolchain.cmake
 echo "NDK_HOME: ${NDK_HOME}"
 echo "TARGET: ${TARGET}"
 echo "TOOLCHAIN_FILE: ${TOOLCHAIN_FILE}"
-echo 'TOOLCHAIN_FILE Content: $(cat ${TOOLCHAIN_FILE})'
+echo "TOOLCHAIN_FILE Content: $(cat ${TOOLCHAIN_FILE})"
 echo "PATH: ${PATH}"
