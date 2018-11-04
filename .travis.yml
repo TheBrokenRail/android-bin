@@ -16,5 +16,3 @@ script:
   - ./build-jerryscript.sh
   - ./build-lua.sh
   - ./deploy.sh
-after_failure:
-  - sleep 20
