@@ -7,4 +7,5 @@ mkdir ${OUT_DIR}
 git clone --depth=1 https://github.com/jerryscript-project/jerryscript.git
 cd jerryscript
 
-python tools/build.py --toolchain=${TOOLCHAIN_FILE} --install=${OUT_DIR} --debug
+cat ${TOOLCHAIN_FILE}
+python tools/build.py --toolchain=${TOOLCHAIN_FILE} --install=${OUT_DIR}
