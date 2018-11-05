@@ -18,7 +18,7 @@ export PATH=${TOOLCHAIN_ROOT}/bin:${PATH}
 export TARGET=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_toolchain; print make_standalone_toolchain.get_triple("'"${ARCH}"'")')
 
 echo 'Creationg CMake Toolchain File...'
-echo -e 'set(CMAKE_SYSTEM_NAME Android)\nset(CMAKE_ANDROID_STANDALONE_TOOLCHAIN '"${TOOLCHAIN_ROOT}"')\nset(CMAKE_SYSTEM_VERSION '"${API_LEVEL}"')' > toolchain.cmake
+echo -e 'set(CMAKE_SYSTEM_NAME Linux)\nset(CMAKE_C_COMPILER '"${TARGET}"'-clang)\nset(CMAKE_SYSROOT '"${TOOLCHAIN_ROOT}"'/sysoot)' > toolchain.cmake
 export TOOLCHAIN_FILE=$(pwd)/toolchain.cmake
 
 echo "NDK_HOME: ${NDK_HOME}"
