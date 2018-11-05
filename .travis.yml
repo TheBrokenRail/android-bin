@@ -8,9 +8,8 @@ matrix:
       env: ARCH="x86"
     - name: "Android x86-64"
       env: ARCH="x86_64"
-env:
-  - API_LEVEL=21
 script:
+  - export API_LEVEL=21
   - chmod +x *.sh
   - mkdir out
   - export DEPLOY_DIR=$(pwd)/out
