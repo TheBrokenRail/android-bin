@@ -8,6 +8,8 @@ matrix:
       env: ARCH="x86"
     - name: "Android x86-64"
       env: ARCH="x86_64"
+env:
+  - API_LEVEL=21
 script:
   - chmod +x *.sh
   - mkdir out
