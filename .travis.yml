@@ -8,13 +8,6 @@ matrix:
       env: ARCH="x86"
     - name: "Android x86-64"
       env: ARCH="x86_64"
-addons:
-  apt:
-    sources:
-      - deadsnakes
-    packages:
-      - autoconf2.13
-      - python3.6
 script:
   - export API_LEVEL=21
   - chmod +x *.sh
@@ -23,5 +16,4 @@ script:
   - source ./get-ndk.sh
   - ./build-jerryscript.sh
   - ./build-lua.sh
-  - ./build-spidermonkey.sh
   - ./deploy.sh
