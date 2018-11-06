@@ -1,3 +1,6 @@
+language: python
+python:
+  - "3.6"
 matrix:
   include:
     - name: "Android ARM"
@@ -12,7 +15,6 @@ addons:
   apt:
     packages:
       - autoconf2.13
-      - python3.6
 script:
   - export API_LEVEL=21
   - chmod +x *.sh
