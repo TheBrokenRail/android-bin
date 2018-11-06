@@ -7,7 +7,7 @@ mkdir ${OUT_DIR}
 git clone --depth=1 https://github.com/mozilla/gecko-dev.git
 cd gecko-dev/js/src
 
-autoconf-2.13
+autoconf2.13
 
 mkdir build
 cd build
