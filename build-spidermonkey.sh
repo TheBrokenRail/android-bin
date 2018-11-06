@@ -9,8 +9,8 @@ cd gecko-dev/js/src
 
 autoconf2.13
 
-mkdir build
-cd build
+mkdir build-dir
+cd build-dir
 ../configure \
   --target=${TARGET} \
   --with-android-ndk=${NDK_HOME}
