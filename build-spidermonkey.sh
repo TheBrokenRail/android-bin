@@ -2,6 +2,8 @@
 
 set -e
 
+wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py && python bootstrap.py --no-interactive --application-choice=mobile_android
+
 OUT_DIR=${DEPLOY_DIR}/spidermonkey
 mkdir ${OUT_DIR}
 git clone --depth=1 https://github.com/mozilla/gecko-dev.git
