@@ -16,7 +16,8 @@ addons:
       - autoconf2.13
       - python3.6
 install:
-  - curl https://sh.rustup.rs -sSf | sh -s -- -y
+  - curl https://sh.rustup.rs -sSf > rust.sh
+  - ./rust.sh -y
 script:
   - export API_LEVEL=21
   - chmod +x *.sh
