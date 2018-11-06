@@ -2,7 +2,7 @@
 
 set -e
 
-wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py && python bootstrap.py --no-interactive --application-choice mobile_android
+wget -O bootstrap.py https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py && python2 bootstrap.py --no-interactive --application-choice mobile_android
 
 OUT_DIR=${DEPLOY_DIR}/spidermonkey
 mkdir ${OUT_DIR}
