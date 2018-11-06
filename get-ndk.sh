@@ -19,7 +19,7 @@ export TARGET=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_to
 export ABI=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_toolchain; print make_standalone_toolchain.get_abis("'"${ARCH}"'")[0]')
 
 echo 'Creationg CMake Toolchain File...'
-echo -e 'set(ANDROID_ABI '"${ABI}"')\nset(ANDROID_PLATFORM android-'"${API_LEVEL}"')\nset(ANDROID_NDK '"${NDK_HOME}"')\n'"$(cat ${NDK_HOME}/build/cmake/android.toolchain.cmake)" > toolchain.cmake
+echo -e 'set(CMAKE_C_COMPILER '"${TARGET}"'-clang)\nset(CMAKE_SYSTEM_NAME Linux)\nset(CMAKE_SYSROOT '"${TOOLCHAIN_ROOT}"'/sysroot)" > toolchain.cmake
 export TOOLCHAIN_FILE=$(pwd)/toolchain.cmake
 
 echo "NDK_HOME: ${NDK_HOME}"
