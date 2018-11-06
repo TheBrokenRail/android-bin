@@ -15,10 +15,7 @@ addons:
     packages:
       - autoconf2.13
       - python3.6
-install:
-  - curl https://sh.rustup.rs -sSf | sh -s -- -y
 script:
-  - source ~/.cargo/env
   - export API_LEVEL=21
   - chmod +x *.sh
   - mkdir out
