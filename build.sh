@@ -11,8 +11,7 @@ run() {
   $1
   if [[ $? != 0 ]]; then
     echo -e "${FAIL}$1 Failed${RESET}"
-  fi
-  if [[ $? == 0 ]]; then
+  else
     echo -e "${SUCCESS}$1 Succeeded${RESET}"
   fi
 }
