@@ -14,6 +14,9 @@ PY_INCLUDE=py-build/build/other_builds/python3/${ABI}__ndk_target_${API_LEVEL}/p
 PY_LIBS=py-build/dists/build/libs/${ABI}
 PY_BUNDLE=py-build/dists/build/_python_bundle/_python_bundle
 
-cp -r ${PY_INCLUDE}/* ${OUT_DIR}
-cp ${PY_LIBS}/* ${OUT_DIR}
-cp -r ${PY_BUNDLE}/* ${OUT_DIR}
+mkdir ${OUT_DIR}/include
+cp -r ${PY_INCLUDE}/* ${OUT_DIR}/include
+mkdir ${OUT_DIR}/libs
+cp ${PY_LIBS}/* ${OUT_DIR}/libs
+mkdir ${OUT_DIR}/bundle
+cp -r ${PY_BUNDLE}/* ${OUT_DIR}/bundle
