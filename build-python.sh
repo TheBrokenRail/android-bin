@@ -9,4 +9,11 @@ pip install --user git+https://github.com/kivy/python-for-android.git cython
 mkdir -p py-build/build/python-installs/build
 
 p4a create --sdk-dir ${ANDROID_HOME} --ndk-dir ${NDK_HOME} --ndk-version ${NDK_VER} --android-api 26 --arch ${ABI} --requirements python3 --storage-dir $(pwd)/py-build --dist-name build
-cp -r py-build/* ${OUT_DIR}
+
+PY_INCLUDE=py-build/build/other_builds/python3/${ABI}__ndk_target_${API_LEVEL}/python3/Include
+PY_LIBS=py-build/dists/build/libs/${ABI}
+PY_BUNDLE=py-build/dists/build/_python_bundle/_python_bundle
+
+cp -r ${PY_INCLUDE}/* ${OUT_DIR}
+cp ${PY_LIBS}/* ${OUT_DIR}
+cp -r ${PY_BUNDLE}/* ${OUT_DIR}
