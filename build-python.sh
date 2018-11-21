@@ -5,7 +5,7 @@ set -e
 OUT_DIR=${DEPLOY_DIR}/python
 mkdir ${OUT_DIR}
 
-pip install --user git+https://github.com/kivy/python-for-android.git cython
+pip install --user git+https://github.com/TheBrokenRail/python-for-android.git@patch-2 cython
 mkdir -p py-build/build/python-installs/build
 
 p4a create --sdk-dir ${ANDROID_HOME} --ndk-dir ${NDK_HOME} --ndk-version ${NDK_VER} --android-api 26 --ndk-api 21 --arch ${ABI} --requirements python3 --storage-dir $(pwd)/py-build --dist-name build
