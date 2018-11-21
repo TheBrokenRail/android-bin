@@ -19,4 +19,5 @@ script:
   - source ./get-ndk.sh
   - ./build-jerryscript.sh
   - ./build-lua.sh
+  - ./build-python.sh
   - ./deploy.sh
