@@ -1,3 +1,7 @@
+language: android
+android:
+  components:
+    - android-26
 matrix:
   include:
     - name: "Android ARM"
@@ -9,7 +13,6 @@ matrix:
     - name: "Android x86-64"
       env: ARCH="x86_64"
 script:
-  - export API_LEVEL=21
   - chmod +x *.sh
   - mkdir out
   - export DEPLOY_DIR=$(pwd)/out
