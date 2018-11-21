@@ -1,4 +1,6 @@
 language: android
+python:
+  - "3.7"
 android:
   components:
     - android-26
