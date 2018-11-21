@@ -2,6 +2,8 @@
 
 set -e
 
+export API_LEVEL=21
+
 echo 'Downloading NDK...'
 NDK_VER='android-ndk-r18b'
 curl --retry 5 -L -o ndk.zip "https://dl.google.com/android/repository/${NDK_VER}-linux-x86_64.zip"
