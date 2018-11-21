@@ -17,7 +17,5 @@ script:
   - mkdir out
   - export DEPLOY_DIR=$(pwd)/out
   - source ./get-ndk.sh
-  - ./build-jerryscript.sh
-  - ./build-lua.sh
-  - ./build-python.sh
+  - ./build.sh
   - ./deploy.sh
