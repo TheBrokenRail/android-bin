@@ -5,7 +5,6 @@ set -e
 OUT_DIR=${DEPLOY_DIR}/python
 mkdir ${OUT_DIR}
 
-pip install --upgrade pip
 pip install git+https://github.com/kivy/python-for-android.git
 mkdir -p py-build/build/python-installs/build
 
