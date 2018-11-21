@@ -8,7 +8,7 @@ echo 'Downloading NDK...'
 export NDK_VER='r18b'
 curl --retry 5 -L -o ndk.zip "https://dl.google.com/android/repository/android-ndk-${NDK_VER}-linux-x86_64.zip"
 unzip ndk.zip > /dev/null
-export NDK_HOME=$(pwd)/${NDK_VER}
+export NDK_HOME=$(pwd)/android-ndk-${NDK_VER}
 
 echo 'Building Toolchain...'
 export TOOLCHAIN_ROOT="${NDK_HOME}/generated-toolchains/${ARCH}"
