@@ -12,7 +12,7 @@ p4a create --sdk-dir ${ANDROID_HOME} --ndk-dir ${NDK_HOME} --ndk-version ${NDK_V
 
 PY_INCLUDE=py-build/build/other_builds/python3/${ABI}__ndk_target_${API_LEVEL}/python3/Include
 PY_LIBS=py-build/build/other_builds/python3/${ABI}__ndk_target_${API_LEVEL}/python3/android-build
-PY_BUNDLE=py-build/dists/build/_python_bundle/_python_bundle
+PY_BUNDLE=py-build/dists/build/_python_bundle/
 
 mkdir ${OUT_DIR}/include
 cp -r ${PY_INCLUDE}/* ${OUT_DIR}/include
