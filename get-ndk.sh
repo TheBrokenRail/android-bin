@@ -22,10 +22,10 @@ ANDROID_NDK_ROOT=${NDK_HOME}
 NDK_BUILDTOOLS_PATH=${NDK_HOME}/build/tools
 source ${NDK_HOME}/build/tools/prebuilt-common.sh
 export PATH=${TOOLCHAIN_ROOT}/bin:${PATH}
-export TARGET=$(get_toolchain_name_for_arch ${ARCH})
+export TARGET=$(get_default_toolchain_prefix_for_arch ${ARCH})
 echo "TARGET: ${TARGET}"
 export ABI=$(IFS=',' read -r -a abis <<< "$(convert_arch_to_abi ${ARCH})"; echo ${abis[0]})
-if [[ ABI=="armeabi" ]]; then
+if [[ ${ABI} == "armeabi" ]]; then
   ABI="armeabi-v7a"
 fi
 echo "ABI: ${ABI}"
