@@ -16,9 +16,10 @@ ${NDK_HOME}/build/tools/make-standalone-toolchain.sh \
   --arch=${ARCH} \
   --platform=android-${API_LEVEL} \
   --install-dir=${TOOLCHAIN_ROOT}
+source ${NDK_HOME}/build/tools/prebuilt-common.sh
 export PATH=${TOOLCHAIN_ROOT}/bin:${PATH}
-export TARGET=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_toolchain; print make_standalone_toolchain.get_triple("'"${ARCH}"'")')
-export ABI=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_toolchain; print make_standalone_toolchain.get_abis("'"${ARCH}"'")[0]')
+export TARGET=$(get_toolchain_name_for_arch ${ARCH})
+export ABI=$(IFS=',' read -r -a abis <<< "$(convert_arch_to_abi ${ARCH})"; echo ${abis[0]})
 
 echo 'Creationg CMake Toolchain File...'
 echo -e 'set(CMAKE_C_COMPILER '"${TARGET}"'-gcc)\nset(CMAKE_C_FLAGS -O2)\nset(CMAKE_SYSTEM_NAME Linux)\nset(CMAKE_SYSROOT '"${TOOLCHAIN_ROOT}"'/sysroot)' > toolchain.cmake
