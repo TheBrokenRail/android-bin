@@ -9,5 +9,5 @@ curl --retry 5 -L -o lua.tar.gz http://www.lua.org/ftp/lua-${LUA_VER}.tar.gz
 tar zxf lua.tar.gz
 cd lua-${LUA_VER}
 
-make CC=${TARGET}-clang posix local
+make CC=${TARGET}-gcc posix local
 cp -r ./install/* ${OUT_DIR}
