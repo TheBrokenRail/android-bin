@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -x +e
 
 export API_LEVEL=21
 
@@ -33,3 +33,5 @@ echo "NDK_HOME: ${NDK_HOME}"
 echo "TOOLCHAIN_FILE: ${TOOLCHAIN_FILE}"
 echo "PATH: ${PATH}"
 echo "TOOLCHAIN_ROOT: ${TOOLCHAIN_ROOT}"
+
+exit 1
