@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -e
 
 export API_LEVEL=21
 
@@ -16,6 +16,7 @@ ${NDK_HOME}/build/tools/make-standalone-toolchain.sh \
   --arch=${ARCH} \
   --platform=android-${API_LEVEL} \
   --install-dir=${TOOLCHAIN_ROOT}
+ANDROID_NDK_ROOT=${NDK_HOME}
 NDK_BUILDTOOLS_PATH=${NDK_HOME}/build/tools
 source ${NDK_HOME}/build/tools/prebuilt-common.sh
 export PATH=${TOOLCHAIN_ROOT}/bin:${PATH}
