@@ -14,7 +14,7 @@ echo 'Building Toolchain...'
 export TOOLCHAIN_ROOT="${NDK_HOME}/generated-toolchains/${ARCH}"
 ${NDK_HOME}/build/tools/make-standalone-toolchain.sh \
   --arch=${ARCH} \
-  --api=${API_LEVEL} \
+  --platform=android-${API_LEVEL} \
   --install-dir=${TOOLCHAIN_ROOT}
 export PATH=${TOOLCHAIN_ROOT}/bin:${PATH}
 export TARGET=$(cd ${NDK_HOME}/build/tools; python -c 'import make_standalone_toolchain; print make_standalone_toolchain.get_triple("'"${ARCH}"'")')
