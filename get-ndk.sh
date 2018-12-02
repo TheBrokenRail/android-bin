@@ -16,7 +16,7 @@ ${NDK_HOME}/build/tools/make-standalone-toolchain.sh \
   --arch=${ARCH} \
   --platform=android-${API_LEVEL} \
   --install-dir=${TOOLCHAIN_ROOT}
-NDK_BUILDTOOLS=${NDK_HOME}/build/tools
+NDK_BUILDTOOLS_PATH=${NDK_HOME}/build/tools
 source ${NDK_HOME}/build/tools/prebuilt-common.sh
 export PATH=${TOOLCHAIN_ROOT}/bin:${PATH}
 export TARGET=$(get_toolchain_name_for_arch ${ARCH})
