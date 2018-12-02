@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x +e
+set -e
 
 export API_LEVEL=21
 
@@ -16,6 +16,8 @@ ${NDK_HOME}/build/tools/make-standalone-toolchain.sh \
   --arch=${ARCH} \
   --platform=android-${API_LEVEL} \
   --install-dir=${TOOLCHAIN_ROOT}
+
+set +e
 ANDROID_NDK_ROOT=${NDK_HOME}
 NDK_BUILDTOOLS_PATH=${NDK_HOME}/build/tools
 source ${NDK_HOME}/build/tools/prebuilt-common.sh
@@ -24,6 +26,7 @@ export TARGET=$(get_toolchain_name_for_arch ${ARCH})
 echo "TARGET: ${TARGET}"
 export ABI=$(IFS=',' read -r -a abis <<< "$(convert_arch_to_abi ${ARCH})"; echo ${abis[0]})
 echo "ABI: ${ABI}"
+set -e
 
 echo 'Creationg CMake Toolchain File...'
 echo -e 'set(CMAKE_C_COMPILER '"${TARGET}"'-gcc)\nset(CMAKE_C_FLAGS -O2)\nset(CMAKE_SYSTEM_NAME Linux)\nset(CMAKE_SYSROOT '"${TOOLCHAIN_ROOT}"'/sysroot)' > toolchain.cmake
@@ -33,6 +36,3 @@ echo "NDK_HOME: ${NDK_HOME}"
 echo "TOOLCHAIN_FILE: ${TOOLCHAIN_FILE}"
 echo "PATH: ${PATH}"
 echo "TOOLCHAIN_ROOT: ${TOOLCHAIN_ROOT}"
-
-sleep 1
-exit 1
