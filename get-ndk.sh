@@ -34,4 +34,5 @@ echo "TOOLCHAIN_FILE: ${TOOLCHAIN_FILE}"
 echo "PATH: ${PATH}"
 echo "TOOLCHAIN_ROOT: ${TOOLCHAIN_ROOT}"
 
+sleep 1
 exit 1
