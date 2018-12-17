@@ -18,3 +18,4 @@ run() {
 
 run ./build-jerryscript.sh
 run ./build-lua.sh
+run ./build-ruby.sh
