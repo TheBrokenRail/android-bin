@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 export API_LEVEL=21
 
