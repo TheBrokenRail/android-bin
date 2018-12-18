@@ -5,6 +5,7 @@ set -e
 RUBY_VER=2.5
 RUBY_VER_MINOR=3
 
+source ~/.rvm/scripts/rvm
 rvm install ${RUBY_VER}.${RUBY_VER_MINOR}
 rvm use ${RUBY_VER}.${RUBY_VER_MINOR}
 
