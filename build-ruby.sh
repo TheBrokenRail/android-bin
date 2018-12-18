@@ -2,6 +2,11 @@
 
 set -e
 
+git clone https://github.com/rbenv/ruby-build.git
+mkdir ruby-build/prefix
+PREFIX=$(pwd)/ruby-build/prefix ruby-build/install.sh
+ruby-build 2.5.3 $(pwd)/ruby
+
 OUT_DIR=${DEPLOY_DIR}/ruby
 mkdir ${OUT_DIR}
 RUBY_VER=2.5
