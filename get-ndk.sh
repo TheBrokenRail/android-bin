@@ -7,7 +7,7 @@ export API_LEVEL=21
 echo 'Downloading NDK...'
 export NDK_VER='10.3.2'
 curl --retry 5 -L -o ndk.tar.xz "https://www.crystax.net/download/crystax-ndk-${NDK_VER}-linux-x86_64.tar.xz"
-tar xJf ndk.tar.xz > /dev/null
+tar xJf ndk.tar.xz
 export NDK_HOME=$(pwd)/crystax-ndk-${NDK_VER}
 
 echo 'Building Toolchain...'
