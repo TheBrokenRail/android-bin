@@ -10,6 +10,6 @@ curl --retry 5 -L -o ruby.tar.gz https://cache.ruby-lang.org/pub/ruby/${RUBY_VER
 tar zxf ruby.tar.gz
 cd ruby-${RUBY_VER}.${RUBY_VER_MINOR}
 
-./configure --prefix=${OUT_DIR} --enable-shared --host=${TARGET}
+./configure --prefix=${OUT_DIR} --enable-shared --host=${TARGET} cflags='-DIOV_MAX=1024'
 make
 make install
