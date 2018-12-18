@@ -6,7 +6,7 @@ RUBY_VER=2.5
 RUBY_VER_MINOR=3
 
 git clone https://github.com/rbenv/ruby-build.git
-ruby-build/install.sh
+PREFIX=/usr/local ruby-build/install.sh
 ruby-build ${RUBY_VER}.${RUBY_VER_MINOR} $(pwd)/ruby
 
 OUT_DIR=${DEPLOY_DIR}/ruby
